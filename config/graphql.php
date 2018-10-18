@@ -84,18 +84,9 @@ return [
         'default' => [
             'query' => [
                 'user' => \App\GraphQL\Query\UserQuery::class,
-                'profile' => \App\GraphQL\Query\ProfileQuery::class,
-                'post' => \App\GraphQL\Query\PostQuery::class,
-                'comment' => \App\GraphQL\Query\CommentQuery::class,
-                'feed' => \App\GraphQL\Query\FeedQuery::class
             ],
             'mutation' => [
-                'createToken' => \App\GraphQL\Mutation\CreateTokenMutation::class,
-                'refreshToken' => \App\GraphQL\Mutation\RefreshTokenMutation::class,
-                'createUser' => \App\GraphQL\Mutation\CreateUserMutation::class,
-                'createPost' => \App\GraphQL\Mutation\CreatePostMutation::class,
-                'createComment' => \App\GraphQL\Mutation\CreateCommentMutation::class,
-                'followUser' => \App\GraphQL\Mutation\FollowUserMutation::class
+
             ]
         ]
     ],
@@ -115,10 +106,7 @@ return [
     // ]
     //
     'types' => [
-        \App\GraphQL\Type\AuthType::class,
         \App\GraphQL\Type\UserType::class,
-        \App\GraphQL\Type\PostType::class,
-        \App\GraphQL\Type\CommentType::class
     ],
     // This callable will received every Error objects for each errors GraphQL catch.
     // The method should return an array representing the error.
