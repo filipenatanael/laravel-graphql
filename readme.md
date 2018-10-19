@@ -30,3 +30,11 @@
     ]
   ]
 ```
+
+
+## Tinker One to One
+- php artisan tinker
+- $user = factory(App\User::class)->create();
+
+- $teacher = new App\Teacher
+- $user->teacher()->save($teacher)
