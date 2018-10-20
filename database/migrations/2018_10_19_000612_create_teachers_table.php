@@ -15,7 +15,7 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
-            $table->string('registration');
+            $table->string('registration')->nullable();
             $table->primary('user_id');
             $table->foreign('user_id')->references('id')->on('users')
                   ->onUpdate('cascade')
