@@ -17,6 +17,6 @@ class Teacher extends Model implements Personable
 
     // public function user(): BelongsTo
     // {
-    //   return $this->belogsTo(User:class, 'user_id')
+    //   return $this->belongsTo(User:class, 'user_id')
     // }
 }

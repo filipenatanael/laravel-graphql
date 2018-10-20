@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 use App\Models\Interfaces\Personable;
 use App\Models\Traits\Personable as PersonableTrait;
-
 use App\Models\Classroom;
 
 class Student extends Model implements Personable
@@ -24,6 +23,6 @@ class Student extends Model implements Personable
 
     public function classroom() : BelongsTo
     {
-      return $this->belogsTo(Classroom::class, 'classroom_id');
+      return $this->belongsTo(Classroom::class);
     }
 }
