@@ -34,7 +34,7 @@
 
 ## Tinker One to One
 - php artisan tinker
-- $user = factory(App\User::class)->create();
+- $user = factory(App\Models\User::class)->create();
 
-- $teacher = new App\Teacher
+- $teacher = new App\Models\Teacher
 - $user->teacher()->save($teacher)
