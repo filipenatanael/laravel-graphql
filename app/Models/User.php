@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-use App\Teacher;
-use App\Student;
+use App\Models\Teacher;
+use App\Models\Student;
 
 class User extends Authenticatable
 {

@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    public $timestamps = false;
     protected $primaryKey = 'user_id';
+    public $timestamps = false;
+
 }

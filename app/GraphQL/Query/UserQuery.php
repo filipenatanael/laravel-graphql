@@ -7,7 +7,7 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
 
-use App\User;
+use App\Models\User;
 
 class UserQuery extends Query
 {
