@@ -38,3 +38,6 @@
 
 - $teacher = new App\Models\Teacher
 - $user->teacher()->save($teacher)
+
+- Define user as student:
+- $user->student()->create([])
