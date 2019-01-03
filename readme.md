@@ -1,56 +1,31 @@
 # Laravel API Using GraphQL
 
-## Steps:
+#### Access the endpoint:
+- http://localhost:8000/graphiql
 
-### Create Type:
+#### User Query:
 
-- php artisan make:graphql:type UserType
-
-### Add to Types:
-
-*config/graphql.php*
-```php
-  'types' => [
-      \App\GraphQL\Type\UserType::class,
-  ]
+```Javascript
+query {
+  user(id: 1) {
+    id,
+    name,
+    email
+  }
+}
 ```
 
-### Create Query
-- php artisan make:graphql:query UserQuery
+#### Mutation:
 
-### Add to Types:
-
-*config/graphql.php*
-```php
-  'schemas' => [
-      'default' => [
-          'query' => [
-              'user' => \App\GraphQL\Query\UserQuery::class,
-      ]
-    ]
-  ]
+```Javascript
+mutation {
+  createUser(
+    name: "Filipe Natanael",
+    email: "filipenatanael@example.com",
+    password: "MyPassWord#123"
+  ) {
+    id
+    email
+  }
+}
 ```
-
-
-## Tinker One to One
-- php artisan tinker
-
-- $teacher = new App\Models\Teacher
-- $user->teacher()->save($teacher);
-
-### Steps:
-- Create user:
-  - $user = new App\Models\User;
-  - $user = factory(App\Models\User::class)->create();
-
-- Define user as student:
-  - $user->student()->create([]);
-
-- Create student instance:
-  - $student = new App\Models\Student;
-
-- Create student instance:
-  - $classroom = new App\Models\Classroom;
-
-- Add student to classroom
-  - $student->classroom()->associate($classroom);

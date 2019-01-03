@@ -16,12 +16,14 @@ class UserQuery extends Query
     'description' => 'Find an user.'
   ];
 
+  // Type of return
   public function type()
   {
     return GraphQL::type('User');
+    // return Type::listOf(GraphQL::type('User'));
     // return Type::listOf(Type::string());
   }
-
+  
   public function args()
   {
     return [
@@ -35,5 +37,6 @@ class UserQuery extends Query
   public function resolve($root, $args, $context, ResolveInfo $info)
   {
     return User::find($args['id']);
+    // return User::all();
   }
 }
