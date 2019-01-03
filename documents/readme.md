@@ -19,17 +19,25 @@ php artisan make:graphql:type UserType
 php artisan make:graphql:query UserQuery
 ```
 
+### Create Mutation
+```shell
+php artisan make:graphql:mutation createUserMutation
+```
+
 ### Add to Types:
 
 *config/graphql.php*
 ```php
-  'schemas' => [
+'schemas' => [
     'default' => [
-      'query' => [
-        'user' => \App\GraphQL\Query\UserQuery::class,
-      ]
+        'query' => [
+            'user' => \App\GraphQL\Query\UserQuery::class,
+        ],
+        'mutation' => [
+            'createUser' => App\GraphQL\Mutation\createUserMutation::class
+        ]
     ]
-  ]
+],
 ```
 <hr>
 
