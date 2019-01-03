@@ -1,3 +1,38 @@
+# Laravel API Using GraphQL - Steps:
+
+## Create Type:
+```shell
+php artisan make:graphql:type UserType
+```
+
+## Add to Types:
+
+*config/graphql.php*
+```php
+  'types' => [
+    \App\GraphQL\Type\UserType::class,
+  ]
+```
+
+### Create Query
+```shell
+php artisan make:graphql:query UserQuery
+```
+
+### Add to Types:
+
+*config/graphql.php*
+```php
+  'schemas' => [
+    'default' => [
+      'query' => [
+        'user' => \App\GraphQL\Query\UserQuery::class,
+      ]
+    ]
+  ]
+```
+<hr>
+
 ## Tinker One to One
 
 - php artisan tinker
