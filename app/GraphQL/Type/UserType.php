@@ -30,6 +30,14 @@ class UserType extends BaseType
       ],
       'updated_at' => [
         'type' => Type::nonNull(Type::string())
+      ],
+      'student' => [
+        'type' => GraphQL::type('Student'),
+        'description' => 'The student profile.'
+      ],
+      'posts' => [
+        'type' => Type::listOf(GraphQL::type('Post')),
+        'description' => 'The user posts.'
       ]
     ];
   }
