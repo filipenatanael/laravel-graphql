@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 use App\Models\Teacher;
 use App\Models\Student;
+use App\Models\Post;
 
 class User extends Authenticatable
 {
@@ -39,6 +41,11 @@ class User extends Authenticatable
     public function student(): HasOne
     {
       return $this->hasOne(Student::class, 'user_id');
+    }
+
+    public function posts() : HasMany
+    {
+      return $this->hasMany(Post::class, 'user_id');
     }
 
 }

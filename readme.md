@@ -13,6 +13,23 @@ query {
     email
   }
 }
+
+
+{
+  user(id: 2) {
+    name,
+    email,
+    student {
+      user_id
+    }
+    posts {
+      user_id
+      title
+      description
+    }
+  }
+}
+
 ```
 
 #### Mutation:

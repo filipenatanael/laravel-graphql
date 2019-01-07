@@ -8,6 +8,8 @@ use GraphQL\Type\Definition\Type;
 use GraphQL;
 
 use App\Models\User;
+use App\Models\Student;
+use App\Models\Post;
 
 class UserQuery extends Query
 {
@@ -21,9 +23,8 @@ class UserQuery extends Query
   {
     return GraphQL::type('User');
     // return Type::listOf(GraphQL::type('User'));
-    // return Type::listOf(Type::string());
   }
-  
+
   public function args()
   {
     return [
@@ -38,5 +39,15 @@ class UserQuery extends Query
   {
     return User::find($args['id']);
     // return User::all();
+
+    //$fields = $info->getFieldSelection();
+    // $bits = User::find($args['id']);
+    // foreach ($fields as $field => $keys) {
+    //   if ($field === 'post') {
+    //     $bits->with('post');
+    //   }
+    // }
+    // return $bits->latest()->get();
+
   }
 }
