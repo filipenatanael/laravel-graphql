@@ -23,12 +23,7 @@ class CreatePostsTable extends Migration
 
           $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')
-                ->onDelete('cascade');
-
-          // $table->integer('user_id');
-          // $table->foreign('user_id')->references('id')->on('users')
-          //       ->onUpdate('cascade')
-          //       ->onDelete('cascade');
+                ->onDelete('set null');
         });
     }
 

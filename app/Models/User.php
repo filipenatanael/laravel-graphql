@@ -4,17 +4,13 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-use App\Models\Teacher;
-use App\Models\Student;
 use App\Models\Post;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -32,16 +28,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function teacher(): HasOne
-    {
-      return $this->hasOne(Teacher::class, 'user_id');
-    }
-
-    public function student(): HasOne
-    {
-      return $this->hasOne(Student::class, 'user_id');
-    }
 
     public function posts() : HasMany
     {

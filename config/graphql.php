@@ -108,7 +108,6 @@ return [
     //
     'types' => [
         \App\GraphQL\Type\UserType::class,
-        \App\GraphQL\Type\StudentType::class,
         \App\GraphQL\Type\PostType::class,
     ],
     // This callable will received every Error objects for each errors GraphQL catch.
