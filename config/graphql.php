@@ -87,6 +87,7 @@ return [
             ],
             'mutation' => [
                 'createUser' => App\GraphQL\Mutation\User\createUserMutation::class,
+                'createPost' => App\GraphQL\Mutation\Post\createPostMutation::class,
             ]
         ]
     ],
