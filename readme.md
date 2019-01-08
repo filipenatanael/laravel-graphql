@@ -1,6 +1,10 @@
-# Laravel API Using GraphQL
+<h1 align="center">Laravel API Using GraphQL</h1>
 
-#### Access the endpoint:
+<p align="center">
+  <a href="https://travis-ci.org/filipenatanael/laravel-graphql"><img src="https://travis-ci.org/filipenatanael/laravel-graphql.svg?branch=master" alt="Travis Build Status"></a>
+</p>
+
+#### Endpoint:
 - http://localhost:8000/graphiql
 
 #### User Query:
@@ -45,4 +49,15 @@ mutation {
     email
   }
 }
+
+mutation {
+  createPost(
+    user_id: 2,
+    title: "JavaScript TDD",
+    description: "JavaScript TDD Course....."
+  ) {
+    id
+  }
+}
+
 ```
