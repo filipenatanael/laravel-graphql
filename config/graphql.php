@@ -86,8 +86,7 @@ return [
                 'user' => \App\GraphQL\Query\UserQuery::class,
             ],
             'mutation' => [
-                'createUser' => App\GraphQL\Mutation\createUserMutation::class,
-                'user' => App\GraphQL\Mutation\UserMutation::class
+                'createUser' => App\GraphQL\Mutation\User\createUserMutation::class,
             ]
         ]
     ],

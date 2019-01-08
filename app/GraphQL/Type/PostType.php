@@ -16,6 +16,9 @@ class PostType extends BaseType
   public function fields()
   {
     return [
+      'id' => [
+        'type' => Type::nonNull(Type::int())
+      ],
       'user_id' => [
         'type' => Type::nonNull(Type::int())
       ],
@@ -23,8 +26,14 @@ class PostType extends BaseType
         'type' => Type::nonNull(Type::string())
       ],
       'description' => [
+        'type' => Type::getNullableType(Type::string())
+      ],
+      'created_at' => [
         'type' => Type::nonNull(Type::string())
-      ]
+      ],
+      'updated_at' => [
+        'type' => Type::nonNull(Type::string())
+      ],
     ];
   }
 }
