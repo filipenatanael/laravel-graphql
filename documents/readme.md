@@ -34,7 +34,7 @@ php artisan make:graphql:mutation createUserMutation
             'user' => \App\GraphQL\Query\UserQuery::class,
         ],
         'mutation' => [
-            'createUser' => App\GraphQL\Mutation\createUserMutation::class
+            'createUser' => App\GraphQL\Mutation\User\createUserMutation::class
         ]
     ]
 ],

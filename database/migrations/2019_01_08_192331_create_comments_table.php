@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeachersTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,20 @@ class CreateTeachersTable extends Migration
      */
     public function up()
     {
-        Schema::create('teachers', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->string('registration')->nullable();
-            $table->primary('user_id');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('content');
+
+            $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+
+            $table->unsignedInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -31,6 +38,6 @@ class CreateTeachersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teachers');
+        Schema::dropIfExists('comments');
     }
 }

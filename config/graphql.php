@@ -86,8 +86,8 @@ return [
                 'user' => \App\GraphQL\Query\UserQuery::class,
             ],
             'mutation' => [
-                'createUser' => App\GraphQL\Mutation\createUserMutation::class,
-                'user' => App\GraphQL\Mutation\UserMutation::class
+                'createUser' => App\GraphQL\Mutation\User\createUserMutation::class,
+                'createPost' => App\GraphQL\Mutation\Post\createPostMutation::class,
             ]
         ]
     ],
@@ -108,8 +108,8 @@ return [
     //
     'types' => [
         \App\GraphQL\Type\UserType::class,
-        \App\GraphQL\Type\StudentType::class,
         \App\GraphQL\Type\PostType::class,
+        \App\GraphQL\Type\CommentType::class,
     ],
     // This callable will received every Error objects for each errors GraphQL catch.
     // The method should return an array representing the error.
