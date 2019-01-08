@@ -17,15 +17,15 @@ query {
 
 {
   user(id: 2) {
-    name,
-    email,
-    student {
-      user_id
-    }
+    name
+    email
     posts {
-      user_id
       title
       description
+      comments {
+        content
+        created_at
+      }
     }
   }
 }
