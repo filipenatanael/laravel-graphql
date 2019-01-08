@@ -34,6 +34,10 @@ class PostType extends BaseType
       'updated_at' => [
         'type' => Type::nonNull(Type::string())
       ],
+      'comments' => [
+        'type' => Type::listOf(GraphQL::type('Comment')),
+        'description' => 'The post comments.'
+      ]
     ];
   }
 }

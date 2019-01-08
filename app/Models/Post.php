@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Comment;
 use App\Models\interfaces\Personable;
 use App\Models\Traits\Personable as PersonableTrait;
 
@@ -12,14 +13,12 @@ class Post extends Model implements Personable
 {
     use PersonableTrait;
 
-    // protected $primaryKey = 'id';
     public $timestamps = false;
 
     public function comments(): HasMany
     {
-      return $this->hasMany(Comment::class, '')
+      return $this->hasMany(Comment::class, 'post_id');
     }
-
 
     // public function user(): BelongsTo
     // {

@@ -10,6 +10,7 @@ use GraphQL;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Post;
+use App\Models\Comment;
 
 class UserQuery extends Query
 {
