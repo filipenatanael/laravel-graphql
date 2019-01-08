@@ -13,7 +13,7 @@ class Post extends Model implements Personable
 {
     use PersonableTrait;
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function comments(): HasMany
     {
