@@ -12,8 +12,14 @@ class Post extends Model implements Personable
 {
     use PersonableTrait;
 
-    protected $primaryKey = 'user_id';
+    // protected $primaryKey = 'id';
     public $timestamps = false;
+
+    public function comments(): HasMany
+    {
+      return $this->hasMany(Comment::class, '')
+    }
+
 
     // public function user(): BelongsTo
     // {
