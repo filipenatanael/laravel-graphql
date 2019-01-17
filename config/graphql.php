@@ -111,6 +111,9 @@ return [
         \App\GraphQL\Type\PostType::class,
         \App\GraphQL\Type\CommentType::class,
     ],
+
+    // You can set the key, which will be used to retrieve the dynamic variables
+    'params_key' => 'variables',
     // This callable will received every Error objects for each errors GraphQL catch.
     // The method should return an array representing the error.
     //

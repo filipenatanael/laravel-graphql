@@ -4,8 +4,18 @@
   <a href="https://travis-ci.org/filipenatanael/laravel-graphql"><img src="https://travis-ci.org/filipenatanael/laravel-graphql.svg?branch=master" alt="Travis Build Status"></a>
 </p>
 
-#### Endpoint:
-- http://localhost:8000/graphiql
+
+## Running:
+
+```shell
+cd laravel-graphql
+php artisan serve
+# http://localhost:8000/graphiql
+
+cd laravel-graphql/client-application
+npm run serve
+# http://localhost:8081
+```
 
 #### User Query:
 
